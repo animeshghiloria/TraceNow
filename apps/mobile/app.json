@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "TraceNow",
+    "slug": "tracenow",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "tracenow",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F0F23"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "TraceNow needs your location to send alerts about missing children near you."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "TraceNow accesses your photos to upload sighting evidence.",
+          "cameraPermission": "TraceNow uses your camera to capture sighting images."
+        }
+      ]
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0F0F23"
+      },
+      "package": "com.tracenow.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.tracenow.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "TraceNow uses your location to alert you about nearby missing children.",
+        "NSCameraUsageDescription": "TraceNow uses your camera to capture sighting images.",
+        "NSPhotoLibraryUsageDescription": "TraceNow accesses your photos to upload sighting evidence."
+      }
+    },
+    "extra": {
+      "apiBaseUrl": "http://localhost/api",
+      "wsUrl": "ws://localhost",
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}
